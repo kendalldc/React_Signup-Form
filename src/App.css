@@ -1,0 +1,29 @@
+html{
+  background-color: black;
+}
+
+.App {
+  text-align: center;
+}
+
+h1{
+  color:white;
+}
+
+/* form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+} */
+.form{
+  border: solid white;
+  border-radius:15px ;
+  background-color: skyblue;
+  display: grid;
+  align-items: baseline;
+  width: 500px;
+  height: 300px;
+  text-align: center;
+}
+
+
