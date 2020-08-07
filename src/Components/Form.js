@@ -9,8 +9,8 @@ this.state= {
     password:'',
     age:'',
     gender:'Gender',
-    occupation:''
-    
+    occupation:'',
+    submitted:false
 }
   
 }    
@@ -36,10 +36,33 @@ handleChangeOccupation = event =>{
 }
 
 handleSubmit= (event) =>{
+event.preventDefault()     
 console.log(this.state);
-
+this.setState({submitted:true})
 }
     render(){
+        let user= ""
+        if(this.state.submitted){
+          user= (
+           <div>
+               <p>
+            {this.state.username} 
+            </p>
+            <p>
+            {this.state.password}
+            </p>
+            <p>
+            {this.state.age}
+            </p>
+            <p>
+            {this.state.gender}
+            </p>
+            <p>
+            {this.state.name}
+            </p>
+           </div>   
+          )
+        }
         return(
             <div className="form">
                 <form onSubmit={this.handleSubmit}>
@@ -57,7 +80,7 @@ console.log(this.state);
  
  <div className='gender'>
  <select  name='gender' placeholder='Gender'  value={this.state.gender} onChange={this.handleSelect} required>
- <option defaultValue="Gender" disabled selected hidden>Gender</option>
+ <option disabled hidden>Gender</option>
 <option>Female</option>
 <option>Male</option>
 <option>Other</option>
@@ -68,9 +91,12 @@ console.log(this.state);
  </div>
 
 <div className='createAccount'>
-<button type="submit" onClick={this.handleSubmit}>Create Account</button>
+<button type="submit">Create Account</button>
 </div>
                 </form>
+
+{user}
+
             </div>
         );
     }
