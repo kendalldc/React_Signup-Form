@@ -4,17 +4,23 @@ html{
 
 .App {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 h1{
   color:white;
+  font-size: 40px;
+  font-family: 'Homemade Apple', cursive;
 }
 
-/* form {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-} */
+h2{
+  color: white;
+  font-size: 20px;
+}
+
 .form{
   border: solid white;
   border-radius:15px ;
@@ -25,5 +31,7 @@ h1{
   height: 300px;
   text-align: center;
 }
+input{
 
+}
 
